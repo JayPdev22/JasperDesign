@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/Styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            JD <div class="logo_text"><span>Jasper</span><span>Design</span></div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger_nav">
+            <!-- <div class="logo">
+                JD <div class="logo_text"><span>Jasper</span><span>Design</span></div>
+            </div> -->
+            <div class="hamburger_menu">
+                <div class="hamburger_icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu_links">
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#project" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="hero" class="hero">
+            <div class="img-container">
+                <img src="./Images/profile_pic.png" alt="profile_pic.jpg" class="img">
+            </div>
+            <div class="hero-text">
+                <p class="hero-text-p1">Hello, I'm</p>
+                <h1 class="title">Jayp D</h1>
+                <p class="hero-text-p1">
+                    Frontend Developer
+                    <br>
+                    Graphical Designer
+                </p>
+                <h3 class="hero-text-h3">
+                    I enjoy designing tech website and digital products
+                </h3>
+                <div class="btn-container">
+                    <button class="btn btn_color1" onclick="window.open()">
+                        Download CV
+                    </button>
+                    <button class="btn btn_color2" onclick="location.href=' ./#contact'">
+                        Contact Info
+                    </button>
+                </div>
+                <div class="socials_container">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section id="about" class="about-me">
+        <p class="section-text">Get to know more</p>
+        <h3 class="title">About Me</h3>
+        <div class="section-container">
+            <div class="section-pic-container">
+                <img src="./Images/minions.jpg" alt="" class="about-pic">
+            </div>
+            <div class="about-me-details">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <i class="fa-solid fa-toolbox icon"></i>
+                        <h3>Experience</h3>
+                        <p>2+ years<br> Frontend Development</p>
+                    </div>
+                    <div class="details-container">
+                        <i class="fa-solid fa-school-circle-check icon"></i>
+                        <h3>Education</h3>
+                        <p>B.sc. Bachelors Degree<br>M.sc. Masters Degree</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error asperiores voluptatem ratione odio atque maiores distinctio perferendis! Blanditiis obcaecati numquam ipsa vero fugiat consequatur quasi quos repellat! Sint quos corrupti nobis quaerat esse doloribus repellendus asperiores aliquid nesciunt consequuntur? Veniam, error. Necessitatibus suscipit odit, ex et fugiat dolores dignissimos?   </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="experience">
+        <p class="section-text">Explore My</p>
+        <h3 class="title">Experience</h3>
+        <div class="experience-section-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Frontend Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>SASS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <i class="fa-solid fa-circle-check icon"></i>
+                            <div>
+                                <h3>Material UI</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Backend Development</h2>
+                <div class="article-container">
+                    <article>
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <div>
+                            <h3>Node JS</h3>
+                            <p>Intermediate</p>
+                        </div>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <div>
+                            <h3>Git</h3>
+                            <p>Intermediate</p>
+                        </div>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <div>
+                            <h3>PHP</h3>
+                            <p>Intermediate</p>
+                        </div>
+                    </article>
+                    <article>
+                        <i class="fa-solid fa-circle-check icon"></i>
+                        <div>
+                            <h3>Python</h3>
+                            <p>Intermediate</p>
+                        </div>
+                    </article>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="project" class="project">
+        <p class="section-text">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-section-container">
+            <div class="project-containers">
+                <div class="project-details-container color_container">
+                    <div class="article-container">
+                        <img src="./Images//project_1.jpg" alt="project_1" class="project_img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">
+                        Project One
+                    </h2>
+                    <div class="btn_container">
+                        <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
+                            Github
+                        </button>
+                        <button class="btn btn_color1 project_btn" onclick= "location.href = 'https //github.com'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="project-details-container color_container">
+                    <div class="article-container">
+                        <img src="./Images//project_2.jpg" alt="project_2" class="project_img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">
+                        Project Two
+                    </h2>
+                    <div class="btn_container">
+                        <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
+                            Github
+                        </button>
+                        <button class="btn btn_color1 project_btn" onclick= "location.href = 'https //github.com'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="project-details-container color_container">
+                    <div class="article-container">
+                        <img src="./Images/project_3.jpg" alt="project_3" class="project_img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">
+                        Project Three
+                    </h2>
+                    <div class="btn_container">
+                        <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
+                            Github
+                        </button>
+                        <button class="btn btn_color1 project_btn" onclick= "location.href = 'https //github.com'">
+                            Live Demo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h3 class="experience-sub-title">Contact Us</h3>
+        <form action="#" id="contactForm" method="POST" onsubmit="returnhandleSubmit(event)">
+            <input type="text" id="name" name="name" placeholder="Your Name" required/>
+            <input type="email" id="email" name="email" placeholder="Your Email" required/>
+            <textarea name="message" id="message" rows="4" placeholder="Your Message" Required></textarea>
+            <button type="submit" class="btn btn_color2">Send Message</button>
+        </form>
+    </section>
+    <footer>
+         <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 JasperDesign. All rights reserved.</p>
+    </footer>
+
+
+
+
+
+
+    <script>
+
+                function toggleMenu() {
+            const menu = document.querySelector(".menu_links");
+            const icon = document.querySelector(".hamburger_icon");
+            menu.classList.toggle("open");
+            icon.classList.toggle("open");
+        }
+
+
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+        // let ticking = false;
+        // let scrollThreshold = 10;
+        // let hideStart = 100;
+
+        // function onScroll() {
+        //     const currentScrollY = window.scrollY;
+        //     const scrollDiff = Math.abs(currentScrollY - lastScrollY);
+
+        //     if (scrollDiff < scrollThreshold) {
+        //         ticking = false;
+        //         return;
+        //     }
+        //     if (currentScrollY <= 0) {
+        //         header.classList.remove('hide');
+        //     }
+
+        //     if (currentScrollY > lastScrollY && currentScrollY > hideStart) {
+        //         header.classList.add('hide');
+        //     } else {
+        //         header.classList.remove('hide');
+        //     }
+
+        //     lastScrollY = currentScrollY;
+        //     ticking = false;
+        // }
+
+        // window.addEventListener('scroll', () => {
+        //     if (!ticking) {
+        //         window.requestAnimationFrame(onScroll);
+
+        //         ticking = true;
+        //     }
+        // });
+
+         window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY) {
+                header.classList.add('hide');
+            }
+
+            if (currentScrollY <= 0) {
+                header.classList.remove('hide');
+            }
+        });
+
+        
+    </script>
+</body>
+</html>
