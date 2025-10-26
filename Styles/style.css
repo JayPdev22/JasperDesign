@@ -21,7 +21,7 @@
 
     /* Line Heights */
     --lh-headings: 1.2;
-    --lh-body: 1.5;
+    --lh-body: 1.4;
     --lh-button: 1.2;
 
     /* Color Palette */
@@ -51,6 +51,7 @@ html {
 body {
     background: var(--background-color);
     line-height: var(--lh-body);
+    width: 100%;
 }
 p {
     font-size: var(--text-body-md);
@@ -59,6 +60,9 @@ p {
 h3 {
     font-size: var(--text-h5);
     font-family: var(--font-body);
+}
+.icon {
+    font-size: 1.4rem;
 }
 /*  Header styles   */
 
@@ -69,44 +73,48 @@ header {
     align-items: center;
     height: 80px;
     font-family: var(--font-heading);
-    background: var(--text-color);
+    background: transparent;
     padding: 1rem 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    color: var(--primaary-color);
 }
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: transfrom 0.3s ease;
+    transition: background 0.3s ease;
 }
 header.hide {
-    transform: translateY(-100%);
+    background: var(--text-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 .logo, .logo_text {
     display: flex;
     align-items: center;
     justify-content: center; 
+    color: var(--primary);
+    transition: color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
 }
 .logo {
     font-size: var(--text-body-lg);
-    color: var(--on-primary);
     font-weight: 600;
+    color: var(--primary);
+}
+.logo.hide, .logo_text.hide {
+    color: var(--on-primary);
 }
 .logo_text {
     flex-direction: column;
     height: 2rem;
-    margin-left: 5px;
-    font-size: var(--text-body-sm);
+    margin-left: 2px;
+    font-size: var(--text-body-md);
 }
 .logo_text span {
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--on-primary);
+    font-weight: 600;
+    letter-spacing: 0.2px;
     display: inline-block;
-}
-.logo:hover {
-    cursor: default;
 }
 nav ul {
     list-style: none;
@@ -116,12 +124,16 @@ nav ul {
     gap: 1rem;
 }
 nav a {
-    color: var(--on-primary);
+    color: var(--primary);
     text-decoration: none;
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
+    font-weight: 600;
 }
-nav a:hover {
-    color: var(--background-light-accent);
+header.hide nav a {
+    color: var(--on-primary);
+}
+nav a:hover, header.hide nav a:hover {
+    color: var(--on-primary-container);
 }
 
 /*  HAMBURGER NAV */
@@ -140,13 +152,19 @@ nav a:hover {
     height: 24px;
     width: 30px;
     cursor: pointer;
-transition: all 0.4 ease;
+    transition: all 0.4 ease;
 }
 .hamburger_icon span {
-    background-color: var(--on-primary);
+    background: var(--primary);
     height: 2px;
     width: 100%;
-    transition: all 0.4 ease;
+    transition: all 0.3s ease;
+}
+header.hide .hamburger_icon span {
+    background: var(--on-primary);
+}
+header.hide .menu_links li a {
+    color: var(--primary);
 }
 .menu_links {
     position: absolute;
@@ -157,11 +175,11 @@ transition: all 0.4 ease;
     width: fit-content;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .25);
 }
 .menu_links li a {
-    color: var(--primaary-color);
+    color: var(--primary);
     display: block;
     padding: 6px 20px;
     text-align: center;
@@ -217,7 +235,7 @@ section {
     align-items: center;
     gap: 1rem;
     min-height: 80vh;
-    margin-top: rem;
+    margin-top: 2rem;
 }
 .img-container {
     flex: 0.8;
@@ -234,7 +252,8 @@ section {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    flex: 1.2;
+    flex: 1.1;
+    /* line-height: var(--lh-button); */
 }
 .hero-text .hero-text-p1 {
     font-family: var(--font-body);
@@ -268,6 +287,7 @@ section {
     background: var(--secondary);
     color: var(--on-secondary);
     font-size: clamp((var(--text-caption)), 2.5vw, var(--text-button));
+    font-weight: 600;
     font-family: var(--font-button);
     transition: all 0.3s ease;
 }
@@ -285,7 +305,36 @@ section {
     background: var(--secondary-container);
     color: var(--on-secondary-container);
 }
-
+.socials_container, .socials_container span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.socials_container {
+    margin-top: 1.6rem;
+    gap: 0.8rem;
+}
+.socials_container span {
+    width: auto;
+    min-height: 40px;
+    border: none;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--primary);
+    transition: all 0.4s ease;
+}
+.socials_container span:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    background: var(--on-primary-container);
+    color: var(--primary-container);
+}
+.social_icon {
+    font-size: clamp(var(--text-h4), 5vw, var(--text-h3));
+    font-weight: 400;
+    
+}
 
 /* About me Section  */
 
@@ -302,9 +351,10 @@ section {
     padding: 3rem 2rem 0;
 }
 .section-pic-container {
-    flex: 1;
+    flex: 0.8;
     height: auto;
-    width: 100%;
+    width: 40%;
+    min-width: 300px;;
 }
 .about-me-details {
     display: flex;
@@ -343,7 +393,10 @@ section {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) ;
     transition: all 0.3s ease;
 }
-
+.text-container p {
+    padding: 0 1rem;
+    text-align: justify;
+}
 /*  Experience section styles  */
 
 #experience {
@@ -376,8 +429,10 @@ section {
  article {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     max-width: 6.4rem;
-    width: 400px;
+    width: 350px;
+    gap: 0.8rem;
 }
 
 
@@ -394,10 +449,17 @@ section {
     flex-wrap: wrap;
 
 }
+.project-section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 4rem 0;
+}
 .project-details-container {
     padding: 1.2rem;
     flex: 1;
-    width: 400px;
+    width: 350px;
     max-width: 100%;
     min-width: 320px;
     background: var(--surface);
@@ -478,6 +540,10 @@ footer {
     margin-top: 2rem;
     color: var(--on-primary);
 }
+footer nav a {
+    color: var(--on-primary);
+    font-family: var(--font-button);
+}
 
 
 
@@ -496,7 +562,7 @@ footer {
         width: 100%;
     }
     .hero, .about,.about-containers, .section-container,
-    .experience-section-container, .project-containers {
+    .experience-section-container,.project-section-container, .project-containers {
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -509,8 +575,8 @@ footer {
         height: fit-content;
         padding: 80px 1.6rem;
     }
-    .experience-section-container {
-        padding: 3rem 1.6rem 0;
+    .project-section-container {
+        padding: 3rem 0;
     }
     .img-container {
         display: block;
