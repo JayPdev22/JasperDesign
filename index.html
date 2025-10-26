@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/Styles/style.css">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/brands.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            JD <div class="logo_text"><span>Jasper</span><span>Design</span></div>
-        </div>
+        <a id="#home" class="logo" href="#">
+            JD <div class="logo_text"><span class="span">Jasper</span><span class="span">Design</span></div>
+        </a>
+            
         <nav class="navbar">
             <ul>
                 <li><a href="#about">About</a></li>
@@ -20,9 +24,6 @@
             </ul>
         </nav>
         <nav id="hamburger_nav">
-            <!-- <div class="logo">
-                JD <div class="logo_text"><span>Jasper</span><span>Design</span></div>
-            </div> -->
             <div class="hamburger_menu">
                 <div class="hamburger_icon" onclick="toggleMenu()">
                     <span></span>
@@ -63,8 +64,8 @@
                     </button>
                 </div>
                 <div class="socials_container">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fa-brands fa-github"></i>
+                    <span><i class="fa-brands fa-linkedin-in social_icon"></i></span>
+                    <span><i class="fa-brands fa-github social_icon"></i></span>
                 </div>
             </div>
         </section>
@@ -90,7 +91,7 @@
                     </div>
                 </div>
                 <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error asperiores voluptatem ratione odio atque maiores distinctio perferendis! Blanditiis obcaecati numquam ipsa vero fugiat consequatur quasi quos repellat! Sint quos corrupti nobis quaerat esse doloribus repellendus asperiores aliquid nesciunt consequuntur? Veniam, error. Necessitatibus suscipit odit, ex et fugiat dolores dignissimos?   </p>
+                    <p>I'm a self-taught web developer and designer with a passion for creating responsive, user-friendly websites. I enjoy blending design and coding to build projects that are both functional and visually engaging. I'm constantly learning new tools and technologies, and I love solving problems through creative, practical solutions. Currently, I'm focused on frontend development and UI/UX design and I'm excited to contributes to projects where I can make an impact.  </p>
                 </div>
             </div>
         </div>
@@ -186,17 +187,17 @@
     <section id="project" class="project">
         <p class="section-text">Browse My Recent</p>
         <h1 class="title">Projects</h1>
-        <div class="experience-section-container">
+        <div class="project-section-container">
             <div class="project-containers">
                 <div class="project-details-container color_container">
                     <div class="article-container">
                         <img src="./Images//project_1.jpg" alt="project_1" class="project_img">
                     </div>
                     <h2 class="experience-sub-title project-title">
-                        Project One
+                        Responsive Navigation Sidebar
                     </h2>
                     <div class="btn_container">
-                        <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
+                        <button class="btn btn_color2 project_btn" onclick= "location.href = 'https//github.com'">
                             Github
                         </button>
                         <button class="btn btn_color1 project_btn" onclick= "location.href = 'https //github.com'">
@@ -209,7 +210,7 @@
                         <img src="./Images//project_2.jpg" alt="project_2" class="project_img">
                     </div>
                     <h2 class="experience-sub-title project-title">
-                        Project Two
+                        Filterable Image Gallery
                     </h2>
                     <div class="btn_container">
                         <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
@@ -225,7 +226,7 @@
                         <img src="./Images/project_3.jpg" alt="project_3" class="project_img">
                     </div>
                     <h2 class="experience-sub-title project-title">
-                        Project Three
+                        Web Dashboard
                     </h2>
                     <div class="btn_container">
                         <button class="btn btn_color2 project_btn" onclick= "location.href = 'https //github.com'">
@@ -277,6 +278,8 @@
 
         let lastScrollY = window.scrollY;
         const header = document.querySelector('header');
+        const logo = document.querySelector('.logo');
+        const logoText = document.querySelector('.logo_text');
         // let ticking = false;
         // let scrollThreshold = 10;
         // let hideStart = 100;
@@ -314,12 +317,16 @@
          window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY > lastScrollY) {
-                header.classList.add('hide');
-            }
-
-            if (currentScrollY <= 0) {
+            if (currentScrollY == 0) {
                 header.classList.remove('hide');
+                logo.classList.remove('hide');
+                logoText.classList.remove('hide');
+            } 
+            if (currentScrollY > 50) {
+                header.classList.add('hide');
+                logo.classList.add('hide');
+                logoText.classList.add('hide');
+
             }
         });
 
